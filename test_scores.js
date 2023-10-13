@@ -35,8 +35,8 @@ const addScore = () => {
   }
   $("#name").focus();
 
-  console.log(names);
-  console.log(scores);
+  //clear the textarea after adding item in array
+  $("#scores_display").value = "";
 };
 
 // function to display the names and scores
