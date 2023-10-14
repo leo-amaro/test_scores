@@ -1,37 +1,83 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Test Score Array</title>
     <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
+    <!-- Include Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
     <main>
+      <div class="container">
         <h1>Use a Test Score array</h1>
-    
-        <div>
-            <label for="name">Name:</label>
-            <input type="text" id="name">
-            <span></span>        
-        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Name"
+            />
+            <span></span>
+          </div>
+          <div class="col-md-4">
+            <input
+              type="number"
+              class="form-control"
+              id="score"
+              placeholder="Score"
+              min="1"
+              max="100"
+            />
+            <span></span>
+          </div>
 
-        <div>
-            <label for="score">Score:</label>
-            <input type="text" id="score">
-            <span></span>        
-        </div>    
+          <div class="col-md-4">
+            <button class="btn btn-primary" id="add">Add</button>
+            <button class="btn btn-secondary" id="display_scores">
+              Display Arrays
+            </button>
+          </div>
 
-        <div>
-            <label>&nbsp;</label>
-	        <input type="button" id="add" value="Add to Array" >
-            <input type="button" id="display_scores" value="Display Scores" >       
+          <div>
+            <textarea
+              class="form-control"
+              disabled
+              id="scores_display"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <select
+              class="form-select form-control form-control-lg"
+              id="sort_scores"
+            >
+              <option value="highest_to_lowest">Highest to Lowest</option>
+              <option value="lowest_to_highest">Lowest to Highest</option>
+            </select>
+          </div>
+          <!-- Alert section -->
+          <div class="container mt-5" id="success-alert">
+            <div
+              class="alert alert-success alert-dismissible fade show"
+              role="alert"
+            >
+              <strong>Success!</strong>
+              <span id="alert-msg" class="text-dark"></span>
+            </div>
+          </div>
         </div>
-
-        <div>
-            <textarea id="scores_display"></textarea>        
-        </div>
+      </div>
     </main>
     <script src="test_scores.js"></script>
-</body>
+  </body>
 </html>
